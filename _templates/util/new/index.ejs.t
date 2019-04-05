@@ -1,15 +1,5 @@
 ---
-to: app/hello.js
+to: src/services/<%= h.changeCase.paramCase(name) %>/index.ts
 ---
-const hello = ```
-Hello!
-This is your first hygen template.
-
-Learn what it can do here:
-
-https://github.com/jondot/hygen
-```
-
-console.log(hello)
-
+const hello = () => 'hello world'
 

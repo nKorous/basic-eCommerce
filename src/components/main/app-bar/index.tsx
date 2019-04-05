@@ -4,23 +4,32 @@ import * as styles from './styles'
 //@material-ui
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import HomeIcon from '@material-ui/icons'
+import TimeToLeaveTwoToneIcon from '@material-ui/icons/TimeToLeaveTwoTone'
+import Button from '@material-ui/core/Button';
+import AccountBoxIcon from '@material-ui/icons/AccountBox'
 
 export interface Props {
-  isLoggedIn?: boolean,
-  loggedInAs?: string | null
-  logOut(loggedIn: boolean): void
+  isLoggedIn: boolean,
+  loggedInAs: string | null
+  isAuth(loggedIn: boolean): void
 }
 
-const AppBarComponent: FC<Props> = ({ isLoggedIn = false, loggedInAs = null, logOut }) => {
+const AppBarComponent: FC<Props> = ({ isLoggedIn, loggedInAs, isAuth }) => {
 
   return(
     <AppBar>
       <Toolbar>
         <span style={{ flex: '1 1'}}></span>
         {
+          !isLoggedIn && (
+            <>Not logged in!</>
+          )
+        }
+        {
           isLoggedIn && loggedInAs && (
-            <>Welcome: {loggedInAs}!!</>
+            <>Welcome: {loggedInAs}!!
+            <Button onClick={() => isAuth(false)} ><TimeToLeaveTwoToneIcon nativeColor="white" /></Button>
+            </>
 
           )
         }
