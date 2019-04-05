@@ -6,7 +6,6 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import TimeToLeaveTwoToneIcon from '@material-ui/icons/TimeToLeaveTwoTone'
 import Button from '@material-ui/core/Button';
-import AccountBoxIcon from '@material-ui/icons/AccountBox'
 
 export interface Props {
   isLoggedIn: boolean,
